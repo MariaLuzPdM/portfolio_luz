@@ -1,21 +1,22 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import langlandLogo from './assets/cropped-cropped-Logo_PNG-e1652688659410.png'
+import alianzaLogo from './assets/alianza.png'
 
 const content = {
   es: {
     brandRole: 'Analista de Cuentas Corrientes',
-    nav: ['Perfil', 'Experiencia', 'Educación', 'Habilidades', 'Contacto'],
+    nav: ['Perfil', 'Experiencia', 'Educación', 'Habilidades', 'Idiomas', 'Contacto'],
     formula:
-      '=PERFIL("Analista Sr."; "Corredora de Seguros"; "Cobranzas"; "IA")',
+      '=PERFIL("Analista Sr."; "Corredora de Seguros"; "Cobranzas"; "Desarrollo Web"; "IA")',
     tag: 'Administración · Cobranzas · Control Operativo · Desarrollo Web · IA',
     subtitle: 'Analista de Cuentas Corrientes Senior',
     intro:
-      'Profesional con más de 13 años de experiencia en gestión administrativa, cobranzas y control de cuentas corrientes. Me especializo en ordenar procesos, reducir riesgos de morosidad y sostener una operación clara, eficiente y confiable.',
+      'Profesional con más de 13 años de experiencia en gestión administrativa, cobranzas y control de cuentas corrientes. Cuento con conocimientos en seguros de crédito, vehículos, incendio y alquileres. Me especializo en ordenar procesos, reducir riesgos de morosidad y sostener una operación clara, eficiente y confiable. Actualmente continúo formándome en desarrollo web para empresas junto a herramientas de IA.',
     stats: ['Años de experiencia', 'Rubros liderados', 'Foco en cumplimiento'],
     downloadCv: 'Descargar CV',
     profileTitle: 'Perfil Profesional',
     profile: [
-      'Soy una profesional administrativa y operativa con más de 13 años de experiencia en gestión de cobranzas, análisis de cuentas corrientes, control operativo y administración de información crítica.',
       'A lo largo de mi trayectoria trabajé en entornos de alta exigencia, desarrollando habilidades en conciliaciones, seguimiento de deuda, coordinación con equipos de cobranza y optimización de procesos administrativos. También cuento con experiencia en el rubro asegurador, brindando asesoramiento integral y gestión de pólizas con foco en la atención al cliente y la precisión operativa.',
       'Me caracterizo por mi organización, capacidad analítica y resolución de problemas, así como por mantener una comunicación clara y profesional incluso en escenarios de presión. Tengo facilidad para adaptarme, aprender rápidamente y aportar orden, eficiencia y compromiso en cada equipo de trabajo. Valoro especialmente el compañerismo y la atención constante a la comunicación entre pares para sostener equipos coordinados, colaborativos y orientados a resultados.',
       'Actualmente me encuentro en búsqueda de nuevas oportunidades laborales donde pueda continuar desarrollándome en áreas administrativas, operativas o de gestión.',
@@ -25,13 +26,13 @@ const content = {
     expRows: [
       {
         role: 'Jefe Analista de Cuentas Corrientes',
-        desc: 'Lideré la gestión integral de cuentas corrientes, control de deuda y conciliaciones. Impulsé mejoras de proceso para anticipar desbalances y acelerar la recuperación.',
+        desc: 'Lideré la gestión integral de cuentas corrientes, control de deuda y conciliaciones. Fortalecí el seguimiento preventivo para detectar deuda en forma temprana, activar alertas y cumplir en tiempo y forma con las condiciones del seguro de crédito de MAPFRE, reduciendo riesgos y mejorando la capacidad de recupero.',
         company: 'CENIT L.T.D.A.',
         period: 'Ene 2023 – Feb 2026',
       },
       {
         role: 'Corredor de Seguros',
-        desc: 'Brindé asesoramiento integral, cotizaciones comparativas y seguimiento de pólizas. Fortalecí controles preventivos para evitar vencimientos y mejorar la experiencia del cliente.',
+        desc: 'Brindé asesoramiento integral, cotizaciones comparativas y seguimiento de pólizas. Realicé control de vencimientos para avisar con anticipación a cada cliente y evitar que quedaran sin cobertura. Atendí clientes de forma presencial y telefónica, y también gestioné la carga completa de información en el sistema.',
         company: 'SEGUROS DEL ESTE S.R.L.',
         period: '2021 – 2023',
       },
@@ -63,37 +64,66 @@ const content = {
       'Conciliación de Cuentas',
       'Gestión de Morosidad',
       'Control Operativo',
-      'Comunicación Efectiva',
-      'Toma de Decisiones',
-      'Trabajo bajo Presión',
       'Organización',
-      'Inglés Intermedio',
-      'Portugués Intermedio',
+      'Toma de Decisiones',
+      'Manejo de Excel Intermedio',
+      'Autonomía',
+      'Pensamiento Preventivo',
+      'Comunicación Efectiva',
+      'Trabajo bajo Presión',
       'Memory Figaro',
       'Memory Conty',
       'Creación de Sitios Web',
       'Inteligencia Artificial',
     ],
+    langTitle: 'Idiomas',
+    langCols: ['Institución', 'Curso / Nivel', 'Período'],
+    langRows: [
+      {
+        institute: 'Langland Language Institute',
+        logo: langlandLogo,
+        logoCls: 'logo-langland',
+        course: 'Inglés nivel A2',
+        period: 'Mar 2026 – Actualidad',
+      },
+      {
+        institute: 'Alianza Cultural Uruguay-Estados Unidos',
+        logo: alianzaLogo,
+        logoCls: 'logo-alianza',
+        course: 'Inglés A2 (curso de conversaciones)',
+        period: 'Abr 2026 – Actualidad',
+      },
+    ],
     contactTitle: 'Contacto',
-    contactIntro:
-      'Disponible para propuestas en administración, cobranzas y gestión de cuentas corrientes.',
+    contactIntro: 'Actualmente disponible para trabajar.',
     contactBtn: 'Contactarme',
+    form: {
+      name: 'Nombre',
+      namePh: 'Tu nombre',
+      email: 'Correo electrónico',
+      emailPh: 'tu@email.com',
+      message: 'Mensaje',
+      messagePh: 'Contame en qué puedo ayudarte…',
+      submit: 'Enviar mensaje',
+      sending: 'Enviando…',
+      success: '¡Gracias! Tu mensaje fue enviado.',
+      error: 'No se pudo enviar. Probá de nuevo o escribime directo a mdemello019@gmail.com.',
+    },
     footer: '© 2026 María Luz Portillo · Todos los derechos reservados',
   },
   en: {
     brandRole: 'Accounts Receivable Analyst',
-    nav: ['Profile', 'Experience', 'Education', 'Skills', 'Contact'],
+    nav: ['Profile', 'Experience', 'Education', 'Skills', 'Languages', 'Contact'],
     formula:
-      '=PROFILE("Sr. Analyst", "Insurance Broker", "Collections", "AI")',
+      '=PROFILE("Sr. Analyst", "Insurance Broker", "Collections", "Web Dev", "AI")',
     tag: 'Administration · Collections · Operational Control · Web Development · AI',
     subtitle: 'Senior Accounts Receivable Analyst',
     intro:
-      'Professional with over 13 years of experience in administrative management, collections, and accounts receivable control. I specialize in organizing processes, reducing delinquency risks, and sustaining a clear, efficient, and reliable operation.',
+      'Professional with over 13 years of experience in administrative management, collections, and accounts receivable control. I have knowledge in credit, vehicle, fire and rental insurance. I specialize in organizing processes, reducing delinquency risks, and sustaining a clear, efficient, and reliable operation. I am currently continuing my training in web development for companies along with AI tools.',
     stats: ['Years of experience', 'Industries led', 'Compliance focus'],
     downloadCv: 'Download Resume',
     profileTitle: 'Professional Profile',
     profile: [
-      'I am an administrative and operational professional with more than 13 years of experience in collections management, accounts receivable analysis, operational control, and critical information management.',
       'Throughout my career I have worked in high-demand environments, developing skills in reconciliations, debt monitoring, coordination with collections teams, and optimization of administrative processes. I also have experience in the insurance industry, providing comprehensive advisory services and policy management with a strong focus on client service and operational accuracy.',
       'I stand out for my organization, analytical thinking, and problem-solving skills, as well as maintaining clear and professional communication even in high-pressure scenarios. I adapt quickly, learn fast, and bring structure, efficiency, and commitment to every team. I especially value teamwork and careful peer communication to support coordinated, collaborative, and results-oriented teams.',
       'I am currently seeking new career opportunities where I can continue growing in administrative, operational, or management roles.',
@@ -103,13 +133,13 @@ const content = {
     expRows: [
       {
         role: 'Head Accounts Receivable Analyst',
-        desc: 'Led end-to-end accounts receivable management, debt control, and reconciliations. Implemented process improvements to anticipate imbalances and accelerate recovery.',
+        desc: 'Led end-to-end accounts receivable management, debt control, and reconciliations. Strengthened preventive monitoring to detect debt early, trigger alerts, and comply on time with the conditions of MAPFRE’s credit insurance, reducing risks and improving recovery capacity.',
         company: 'CENIT L.T.D.A.',
         period: 'Jan 2023 – Feb 2026',
       },
       {
         role: 'Insurance Broker',
-        desc: 'Provided full advisory services, comparative quotations, and policy follow-up. Strengthened preventive controls to avoid expirations and improve customer experience.',
+        desc: 'Provided full advisory services, comparative quotations, and policy follow-up. Performed expiration controls to alert each client in advance and prevent gaps in coverage. Served clients in person and by phone, and also managed full data entry into the system.',
         company: 'SEGUROS DEL ESTE S.R.L.',
         period: '2021 – 2023',
       },
@@ -141,21 +171,51 @@ const content = {
       'Account Reconciliation',
       'Delinquency Management',
       'Operational Control',
-      'Effective Communication',
-      'Decision Making',
-      'Work Under Pressure',
       'Organization',
-      'Intermediate English',
-      'Intermediate Portuguese',
+      'Decision Making',
+      'Intermediate Excel',
+      'Autonomy',
+      'Preventive Thinking',
+      'Effective Communication',
+      'Work Under Pressure',
       'Memory Figaro',
       'Memory Conty',
       'Website Creation',
       'Artificial Intelligence',
     ],
+    langTitle: 'Languages',
+    langCols: ['Institution', 'Course / Level', 'Period'],
+    langRows: [
+      {
+        institute: 'Langland Language Institute',
+        logo: langlandLogo,
+        logoCls: 'logo-langland',
+        course: 'English A2 level',
+        period: 'Mar 2026 – Present',
+      },
+      {
+        institute: 'Alianza Cultural Uruguay-Estados Unidos',
+        logo: alianzaLogo,
+        logoCls: 'logo-alianza',
+        course: 'English A2 (conversation course)',
+        period: 'Apr 2026 – Present',
+      },
+    ],
     contactTitle: 'Contact',
-    contactIntro:
-      'Available for opportunities in administration, collections, and accounts receivable management.',
+    contactIntro: 'Currently available for work.',
     contactBtn: 'Contact Me',
+    form: {
+      name: 'Name',
+      namePh: 'Your name',
+      email: 'Email',
+      emailPh: 'you@email.com',
+      message: 'Message',
+      messagePh: 'Tell me how I can help you…',
+      submit: 'Send message',
+      sending: 'Sending…',
+      success: 'Thanks! Your message was sent.',
+      error: 'Couldn’t send. Please try again or email me at mdemello019@gmail.com.',
+    },
     footer: '© 2026 María Luz Portillo · All rights reserved',
   },
 }
@@ -194,6 +254,8 @@ function TypewriterText({ text, as: Tag = 'span', className = '', speed = 45 }) 
   )
 }
 
+const FORMSPREE_ID = 'xbdbryja'
+
 function App() {
   const [dark, setDark] = useState(() => {
     const savedTheme = window.localStorage.getItem('portfolio-theme')
@@ -203,12 +265,14 @@ function App() {
   const [activeSection, setActiveSection] = useState('perfil')
   const t = content[lang]
   const [typedFormula, setTypedFormula] = useState('')
+  const [formStatus, setFormStatus] = useState('idle') // idle | sending | success | error
   const navItems = [
     { id: 'perfil', label: t.nav[0] },
     { id: 'experiencia', label: t.nav[1] },
     { id: 'educacion', label: t.nav[2] },
     { id: 'habilidades', label: t.nav[3] },
-    { id: 'contacto', label: t.nav[4] },
+    { id: 'idiomas', label: t.nav[4] },
+    { id: 'contacto', label: t.nav[5] },
   ]
 
   useEffect(() => {
@@ -293,7 +357,6 @@ function App() {
         <nav className="topbar">
           <div className="ribbon-top">
             <div className="ribbon-brand">
-              <span className="xl-logo">xl</span>
               <span className="brand-name">María Luz Portillo</span>
             </div>
             <div className="lang-toggle" role="group" aria-label="Cambiar idioma">
@@ -486,57 +549,139 @@ function App() {
           </div>
         </section>
 
+        {/* ── IDIOMAS ── */}
+        <section id="idiomas" className="xl-section reveal">
+          <div className="section-header">
+            <div className="row-num-col">06</div>
+            <TypewriterText as="h2" text={t.langTitle} />
+          </div>
+          <div className="section-body">
+            <div className="xl-table edu-table">
+              <div className="xl-thead">
+                <div className="xl-col-num" />
+                <div className="xl-col">{t.langCols[0]}</div>
+                <div className="xl-col">{t.langCols[1]}</div>
+                <div className="xl-col xl-col-period">{t.langCols[2]}</div>
+              </div>
+              <div className="xl-tbody">
+                {t.langRows.map((row, index) => (
+                  <div key={row.institute + row.course} className="xl-row">
+                    <div className="xl-row-num">{index + 1}</div>
+                    <div className="xl-cell xl-cell-inst">
+                      <img className={`lang-logo ${row.logoCls || ''}`} src={row.logo} alt={row.institute} />
+                      <span>{row.institute}</span>
+                    </div>
+                    <div className="xl-cell">{row.course}</div>
+                    <div className="xl-cell xl-period">{row.period}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── CONTACTO ── */}
         <section id="contacto" className="xl-section reveal">
           <div className="section-header">
-            <div className="row-num-col">06</div>
+            <div className="row-num-col">07</div>
             <TypewriterText as="h2" text={t.contactTitle} />
           </div>
           <div className="section-body contact-body">
             <p className="section-intro">
               {t.contactIntro}
             </p>
-            <div className="pcard">
-              <a className="pcard__mail" href="mailto:mdemello019@gmail.com" aria-label="Enviar email">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <form
+              className="contact-form"
+              onSubmit={async (e) => {
+                e.preventDefault()
+                const form = e.currentTarget
+                const data = new FormData(form)
+                setFormStatus('sending')
+                try {
+                  const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+                    method: 'POST',
+                    body: data,
+                    headers: { Accept: 'application/json' },
+                  })
+                  if (res.ok) {
+                    setFormStatus('success')
+                    form.reset()
+                  } else {
+                    setFormStatus('error')
+                  }
+                } catch {
+                  setFormStatus('error')
+                }
+              }}
+            >
+              <div className="form-row">
+                <label className="form-field">
+                  <span className="form-label">{t.form.name}</span>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    placeholder={t.form.namePh}
+                    autoComplete="name"
+                  />
+                </label>
+                <label className="form-field">
+                  <span className="form-label">{t.form.email}</span>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder={t.form.emailPh}
+                    autoComplete="email"
+                  />
+                </label>
+              </div>
+              <label className="form-field">
+                <span className="form-label">{t.form.message}</span>
+                <textarea
+                  name="message"
+                  required
+                  rows={6}
+                  placeholder={t.form.messagePh}
+                />
+              </label>
+              <button
+                type="submit"
+                className="form-submit"
+                disabled={formStatus === 'sending'}
+              >
+                {formStatus === 'sending' ? t.form.sending : t.form.submit}
+              </button>
+              {formStatus === 'success' && (
+                <p className="form-feedback form-feedback--ok">{t.form.success}</p>
+              )}
+              {formStatus === 'error' && (
+                <p className="form-feedback form-feedback--err">{t.form.error}</p>
+              )}
+            </form>
+
+            <div className="contact-socials" aria-label="Redes y contacto directo">
+              <a className="contact-social" href="https://wa.me/59894492019" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+              </a>
+              <a className="contact-social" href="https://www.linkedin.com/in/mar%C3%ADa-luz-portillo-de-mello-7b8592254/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+              <a className="contact-social" href="tel:+59894492019" aria-label="Llamar">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+              </a>
+              <a className="contact-social" href="mailto:mdemello019@gmail.com" aria-label="Enviar email">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                   <rect width="20" height="16" x="2" y="4" rx="2" />
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                 </svg>
               </a>
-              <div className="pcard__pic">
-                {/*
-                  Para agregar tu foto, reemplazá el div.pcard__initials
-                  por: <img src="/tu-foto.jpg" alt="María Luz Portillo" />
-                */}
-                <div className="pcard__initials">MLP</div>
-              </div>
-              <div className="pcard__bottom">
-                <div className="pcard__content">
-                  <span className="pcard__name">María Luz Portillo</span>
-                  <span className="pcard__desc">
-                    {t.subtitle}
-                  </span>
-                </div>
-                <div className="pcard__actions">
-                  <div className="pcard__socials">
-                    <a href="https://wa.me/59894492019" target="_blank" rel="noreferrer" aria-label="WhatsApp">
-                      <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                      </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/mar%C3%ADa-luz-portillo-de-mello-7b8592254/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-                      <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                      </svg>
-                    </a>
-                    <a href="tel:+59892597775" aria-label="Llamar">
-                      <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
